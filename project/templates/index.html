@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="..\\static\\style.css">    
+        <link rel="stylesheet" href="https://unpkg.com/flexboxgrid2@7.2.1/flexboxgrid2.min.css">
+    <title>Pinball</title>
+    </head>
+    <body>
+        
+
+        <header class="container_header">
+            
+            <div class="container col-lg-12 col-md-12 col-xs-12">
+                <div class="header_nav">
+                                    
+                    <a href="/">              
+                        <img src="..\\static\\Logo_1.png" alt="Logo">
+                    </a>  
+                 
+                    <div class="hamburger-menu">
+                        <input id="menu__toggle" type="checkbox" />
+                        <label class="menu__btn" for="menu__toggle">
+                          <span></span>
+                        </label>
+                        <ul class="menu__box">
+                          <li><a class="menu__item" href="/faq">FAQ</a></li>
+                           {% if not current_user.is_authenticated %}
+                            <li><a class="menu__item" href="/signup">Register</a></li>
+
+                            <li><a class="menu__item" href="/login">Login</a></li>
+                            {% endif %}
+                            {% if current_user.is_authenticated %}
+                            <li><a class="menu__item" href="/logout">Logout</a></li>
+                            {% endif %}
+                        </ul>  
+                    </div>
+                    {% block content %}
+                     <form action="" method="POST">
+                         {{ form.hidden_tag() }}
+                         <p>
+
+                             {{ form.name(size=16) }}
+                             {{ form.submit() }}
+                         </p>
+                     </form>
+                     {% endblock %}
+                    <div class="s"></div>
+                    {% if current_user.is_authenticated %}
+                        <div class="avi">
+                            <img src="..\\static\\ETjm467WkAcYV5h.png" alt="Avatar" id="avatar">
+                        </div>
+
+                        <a href ="/profile" class="greetings">
+                            <div>Hello!</div>
+                        </a>
+                     {% endif %}
+                    </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="main">
+            <div class="main_content">
+                <div class="films row">
+                    <a href="/firstfilm" class="film col-sm-12 col-md-12 col-lg-3">
+                        <div class="imgblock">
+                            <img src="..\\static\\Layer 5.png" alt="First Film">
+                        </div>
+                        <div class="filmname">Animation films</div>
+                        <div class="filmlocation">
+                            <img src="..\\static\\location.png" alt="Film Location">
+                            <span>Movies</span>
+                        </div>
+                        <div class="filmtxt">
+                            Lorem Ipsum is simply dummy text of the printing & typesetting industry. 
+                        </div>
+                        <div class="hrmn"></div>
+                        <div class="bottom">
+                            <div class="rating">
+                                <img src="..\\static\\Layer 9 copy.png" alt="Rating">
+                                <img src="..\\static\\Layer 9 copy.png" alt="Rating">
+                                <img src="..\\static\\Layer 5 copy 4.png" alt="Rating">
+                                <img src="..\\static\\Layer 5 copy 4.png" alt="Rating">
+                            </div>
+                            <div class="facebook">
+                                <img src="..\\static\\Ellipse 1.png" alt="Facebook">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/secondfilm" class="film col-sm-12 col-md-12 col-lg-3">
+                        <div class="imgblock">
+                            <img src="..\\static\\Layer 6.png" alt="Second Film">
+                        </div>
+                        <div class="filmname">Animation films</div>
+                        <div class="filmlocation">
+                            <img src="..\\static\\location.png" alt="Film Location">
+                            <span>Movies</span>
+                        </div>
+                        <div class="filmtxt">
+                            Lorem Ipsum is simply dummy text of the printing & typesetting industry.
+                        </div>
+                        <div class="hrmn"></div>
+                        <div class="bottom">
+                            <div class="rating">
+                                <img src="..\\static\\Layer 9 copy.png" alt="Rating">
+                                <img src="..\\static\\Layer 9 copy.png" alt="Rating">
+                                <img src="..\\static\\Layer 5 copy 4.png" alt="Rating">
+                                <img src="..\\static\\Layer 5 copy 4.png" alt="Rating">
+                            </div>
+                            <div class="facebook">
+                                <img src="..\\static\\Ellipse 1.png" alt="Facebook">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/thirdfilm" class="film col-sm-12 col-md-12 col-lg-3">
+                        <div class="imgblock">
+                            <img src="..\\static\\Layer 7.png" alt="Third Film">
+                        </div>
+                        <div class="filmname">Animation films</div>
+                        <div class="filmlocation">
+                            <img src="..\\static\\location.png" alt="Film Location">
+                            <span>Animations</span>
+                        </div>
+                        <div class="filmtxt">
+                            Lorem Ipsum is simply dummy text of the printing & typesetting industry.
+                        </div>
+                        <div class="hrmn"></div>
+                        <div class="bottom">
+                            <div class="rating">
+                                <img src="..\\static\\Layer 9 copy.png" alt="Rating">
+                                <img src="..\\static\\Layer 9 copy.png" alt="Rating">
+                                <img src="..\\static\\Layer 5 copy 4.png" alt="Rating">
+                                <img src="..\\static\\Layer 5 copy 4.png" alt="Rating">
+                            </div>
+                            <div class="facebook">
+                                <img src="..\\static\\Ellipse 1.png" alt="Facebook">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/fourthfilm" class="film col-sm-12 col-md-12 col-lg-3">
+                        <div class="imgblock">
+                            <img src="..\\static\\Layer 8 (1).png" alt="Fourth Film">
+                        </div>
+                        <div class="filmname">Animation films</div>
+                        <div class="filmlocation">
+                            <img src="..\\static\\location.png" alt="Film Location">
+                            <span>3D Animations</span>
+                        </div>
+                        <div class="filmtxt">
+                            Lorem Ipsum is simply dummy text of the printing & typesetting industry.
+                        </div>
+                        <div class="hrmn"></div>
+                        <div class="bottom">
+                            <div class="rating">
+                                <img src="..\\static\\Layer 9 copy.png" alt="Rating">
+                                <img src="..\\static\\Layer 9 copy.png" alt="Rating">
+                                <img src="..\\static\\Layer 5 copy 4.png" alt="Rating">
+                                <img src="..\\static\\Layer 5 copy 4.png" alt="Rating">
+                            </div>
+                            <div class="facebook">
+                                <img src="..\\static\\Ellipse 1.png" alt="Facebook">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/fourthfilm" class="film col-sm-12 col-md-12 col-lg-3">
+                        <div class="imgblock">
+                            <img src="..\\static\\Layer 8 (1).png" alt="Fourth Film">
+                        </div>
+                        <div class="filmname">Animation films</div>
+                        <div class="filmlocation">
+                            <img src="..\\static\\location.png" alt="Film Location">
+                            <span>3D Animations</span>
+                        </div>
+                        <div class="filmtxt">
+                            Lorem Ipsum is simply dummy text of the printing & typesetting industry.
+                        </div>
+                        <div class="hrmn"></div>
+                        <div class="bottom">
+                            <div class="rating">
+                                <img src="..\\static\\Layer 9 copy.png" alt="Rating">
+                                <img src="..\\static\\Layer 9 copy.png" alt="Rating">
+                                <img src="..\\static\\Layer 5 copy 4.png" alt="Rating">
+                                <img src="..\\static\\Layer 5 copy 4.png" alt="Rating">
+                            </div>
+                            <div class="facebook">
+                                <img src="..\\static\\Ellipse 1.png" alt="Facebook">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/thirdfilm" class="film col-sm-12 col-md-12 col-lg-3">
+                        <div class="imgblock">
+                            <img src="..\\static\\Layer 7.png" alt="Third Film">
+                        </div>
+                        <div class="filmname">Animation films</div>
+                        <div class="filmlocation">
+                            <img src="..\\static\\location.png" alt="Film Location">
+                            <span>Animations</span>
+                        </div>
+                        <div class="filmtxt">
+                            Lorem Ipsum is simply dummy text of the printing & typesetting industry.
+                        </div>
+                        <div class="hrmn"></div>
+                        <div class="bottom">
+                            <div class="rating">
+                                <img src="..\\static\\Layer 9 copy.png" alt="Rating">
+                                <img src="..\\static\\Layer 9 copy.png" alt="Rating">
+                                <img src="..\\static\\Layer 5 copy 4.png" alt="Rating">
+                                <img src="..\\static\\Layer 5 copy 4.png" alt="Rating">
+                            </div>
+                            <div class="facebook">
+                                <img src="..\\static\\Ellipse 1.png" alt="Facebook">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/firstfilm" class="film col-sm-12 col-md-12 col-lg-3">
+                        <div class="imgblock">
+                            <img src="..\\static\\Layer 5.png" alt="First Film">
+                        </div>
+                        <div class="filmname">Animation films</div>
+                        <div class="filmlocation">
+                            <img src="..\\static\\location.png" alt="Film Location">
+                            <span>Movies</span>
+                        </div>
+                        <div class="filmtxt">
+                            Lorem Ipsum is simply dummy text of the printing & typesetting industry. 
+                        </div>
+                        <div class="hrmn"></div>
+                        <div class="bottom">
+                            <div class="rating">
+                                <img src="..\\static\\Layer 9 copy.png" alt="Rating">
+                                <img src="..\\static\\Layer 9 copy.png" alt="Rating">
+                                <img src="..\\static\\Layer 5 copy 4.png" alt="Rating">
+                                <img src="..\\static\\Layer 5 copy 4.png" alt="Rating">
+                            </div>
+                            <div class="facebook">
+                                <img src="..\\static\\Ellipse 1.png" alt="Facebook">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/secondfilm" class="film col-sm-12 col-md-12 col-lg-3">
+                        <div class="imgblock">
+                            <img src="..\\static\\Layer 6.png" alt="Second Film">
+                        </div>
+                        <div class="filmname">Animation films</div>
+                        <div class="filmlocation">
+                            <img src="..\\static\\location.png" alt="Film Location">
+                            <span>Movies</span>
+                        </div>
+                        <div class="filmtxt">
+                            Lorem Ipsum is simply dummy text of the printing & typesetting industry.
+                        </div>
+                        <div class="hrmn"></div>
+                        <div class="bottom">
+                            <div class="rating">
+                                <img src="..\\static\\Layer 9 copy.png" alt="Rating">
+                                <img src="..\\static\\Layer 9 copy.png" alt="Rating">
+                                <img src="..\\static\\Layer 5 copy 4.png" alt="Rating">
+                                <img src="..\\static\\Layer 5 copy 4.png" alt="Rating">
+                            </div>
+                            <div class="facebook">
+                                <img src="..\\static\\Ellipse 1.png" alt="Facebook">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/fourthfilm" class="film col-sm-12 col-md-12 col-lg-3">
+                        <div class="imgblock">
+                            <img src="..\\static\\Layer 8 (1).png" alt="Fourth Film">
+                        </div>
+                        <div class="filmname">Animation films</div>
+                        <div class="filmlocation">
+                            <img src="..\\static\\location.png" alt="Film Location">
+                            <span>3D Animations</span>
+                        </div>
+                        <div class="filmtxt">
+                            Lorem Ipsum is simply dummy text of the printing & typesetting industry.
+                        </div>
+                        <div class="hrmn"></div>
+                        <div class="bottom">
+                            <div class="rating">
+                                <img src="..\\static\\Layer 9 copy.png" alt="Rating">
+                                <img src="..\\static\\Layer 9 copy.png" alt="Rating">
+                                <img src="..\\static\\Layer 5 copy 4.png" alt="Rating">
+                                <img src="..\\static\\Layer 5 copy 4.png" alt="Rating">
+                            </div>
+                            <div class="facebook">
+                                <img src="..\\static\\Ellipse 1.png" alt="Facebook">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/thirdfilm" class="film col-sm-12 col-md-12 col-lg-3">
+                        <div class="imgblock">
+                            <img src="..\\static\\Layer 7.png" alt="Third Film">
+                        </div>
+                        <div class="filmname">Animation films</div>
+                        <div class="filmlocation">
+                            <img src="..\\static\\location.png" alt="Film Location">
+                            <span>Animations</span>
+                        </div>
+                        <div class="filmtxt">
+                            Lorem Ipsum is simply dummy text of the printing & typesetting industry.
+                        </div>
+                        <div class="hrmn"></div>
+                        <div class="bottom">
+                            <div class="rating">
+                                <img src="..\\static\\Layer 9 copy.png" alt="Rating">
+                                <img src="..\\static\\Layer 9 copy.png" alt="Rating">
+                                <img src="..\\static\\Layer 5 copy 4.png" alt="Rating">
+                                <img src="..\\static\\Layer 5 copy 4.png" alt="Rating">
+                            </div>
+                            <div class="facebook">
+                                <img src="..\\static\\Ellipse 1.png" alt="Facebook">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/fourthfilm" class="film col-sm-12 col-md-12 col-lg-3">
+                        <div class="imgblock">
+                            <img src="..\\static\\Layer 8 (1).png" alt="Fourth Film">
+                        </div>
+                        <div class="filmname">Animation films</div>
+                        <div class="filmlocation">
+                            <img src="..\\static\\location.png" alt="Film Location">
+                            <span>3D Animations</span>
+                        </div>
+                        <div class="filmtxt">
+                            Lorem Ipsum is simply dummy text of the printing & typesetting industry.
+                        </div>
+                        <div class="hrmn"></div>
+                        <div class="bottom">
+                            <div class="rating">
+                                <img src="..\\static\\Layer 9 copy.png" alt="Rating">
+                                <img src="..\\static\\Layer 9 copy.png" alt="Rating">
+                                <img src="..\\static\\Layer 5 copy 4.png" alt="Rating">
+                                <img src="..\\static\\Layer 5 copy 4.png" alt="Rating">
+                            </div>
+                            <div class="facebook">
+                                <img src="..\\static\\Ellipse 1.png" alt="Facebook">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/thirdfilm" class="film col-sm-12 col-md-12 col-lg-3">
+                        <div class="imgblock">
+                            <img src="..\\static\\Layer 7.png" alt="Third Film">
+                        </div>
+                        <div class="filmname">Animation films</div>
+                        <div class="filmlocation">
+                            <img src="..\\static\\location.png" alt="Film Location">
+                            <span>Animations</span>
+                        </div>
+                        <div class="filmtxt">
+                            Lorem Ipsum is simply dummy text of the printing & typesetting industry.
+                        </div>
+                        <div class="hrmn"></div>
+                        <div class="bottom">
+                            <div class="rating">
+                                <img src="..\\static\\Layer 9 copy.png" alt="Rating">
+                                <img src="..\\static\\Layer 9 copy.png" alt="Rating">
+                                <img src="..\\static\\Layer 5 copy 4.png" alt="Rating">
+                                <img src="..\\static\\Layer 5 copy 4.png" alt="Rating">
+                            </div>
+                            <div class="facebook">
+                                <img src="..\\static\\Ellipse 1.png" alt="Facebook">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+        <footer>
+            <div class="container_header col-xs-6 col-md-6 col-lg-6">
+                <div class="footer_header">
+                    <img src="..\\static\\Logo_1.png" class="footer_logo">
+                </div>
+                <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/org/moskovskiy_kreml/1023322799/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Московский Кремль</a><a href="https://yandex.ru/maps/213/moscow/category/museum/184105894/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Музей в Москве</a><a href="https://yandex.ru/maps/213/moscow/category/landmark_attraction/89683368508/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Достопримечательность в Москве</a><iframe src="https://yandex.ru/map-widget/v1/-/CCUuIYH9dA" width=70% height="200" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+            </div>
+        </footer>
+        
+    </body>
+</html>

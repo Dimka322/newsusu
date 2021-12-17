@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="..\\static\\style.css">    
+        <link rel="stylesheet" href="https://unpkg.com/flexboxgrid2@7.2.1/flexboxgrid2.min.css">
+    <title>Pinball</title>
+    </head>
+    <body>
+        <button class="open-button" onclick="openForm()">Login</button>
+
+<div class="form-popup" id="myForm">
+  <form action="../action_page.php" class="form-container">
+    <h1>Sign in</h1>
+
+    <label for="email"><b>E-mail address</b></label>
+    <input type="text" placeholder="E-mail" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="password" name="psw" required>
+
+    <button type="submit" class="btn">Sign in</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+        <header class="container_header">
+            
+            <div class="container col-lg-12 col-md-12 col-xs-12">
+                <div class="header_nav">
+                                    
+                    <a href="/">
+                        <img src="..\\static\\Logo_1.png">
+                    </a>  
+                 
+                    <div class="hamburger-menu">
+                        <input id="menu__toggle" type="checkbox" />
+                        <label class="menu__btn" for="menu__toggle">
+                          <span></span>
+                        </label>
+                        <ul class="menu__box">
+                          <li><a class="menu__item" href="/">Main page</a></li>
+
+                        </ul>  
+                    </div>
+                    <div class="finder col-xs-10 col-md-6 col-lg-6">
+
+                    </div>
+                    <div class="s"></div>
+                        {% if current_user.is_authenticated %}
+                        <div class="avi">
+                            <img src="..\\static\\ETjm467WkAcYV5h.png" alt="Avatar" id="avatar">
+                        </div>
+
+                        <a href ="/profile" class="greetings">
+                            <div>Hello!</div>
+                        </a>
+                     {% endif %}
+                    </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="main">
+            <div class="main_content">
+                <h1><b>F.A.Q.</b></h1>
+                <h2>Что это за сайт?</h2>
+                <p>Этот сайт хранит в себе фильмы и информацию о них.</p>
+                <h2>Как им пользоваться?</h2>
+                <p>Достаточно просто выбрать фильм на главной странице. <br>
+                    Для открытия других функций нужно зайти в свой профиль.</p>
+            </div>    
+        </div>
+        </body>
+        </html>

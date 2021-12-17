@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="..\\static\\style.css">    
+        <link rel="stylesheet" href="https://unpkg.com/flexboxgrid2@7.2.1/flexboxgrid2.min.css">
+    <title>Pinball</title>
+    </head>
+    <body>
+        
+
+
+        <header class="container_header">
+            
+            <div class="container col-lg-12 col-md-12 col-xs-12">
+                <div class="header_nav">
+                     <a href="/">
+                    <img src="..\\static\\Logo_1.png">
+                </a>     
+                    <div class="hamburger-menu">
+                        <input id="menu__toggle" type="checkbox" />
+                        <label class="menu__btn" for="menu__toggle">
+                          <span></span>
+                        </label>
+                        <ul class="menu__box">
+                          <li><a class="menu__item" href="/faq">FAQ</a></li>
+
+                        </ul>  
+                    </div>
+                    <div class="finder col-xs-10 col-md-6 col-lg-6">
+
+                    </div>
+                    <div class="s"></div>
+                        {% if current_user.is_authenticated %}
+                        <div class="avi">
+                            <img src="..\\static\\ETjm467WkAcYV5h.png" alt="Avatar" id="avatar">
+                        </div>
+
+                        <a href ="/profile" class="greetings">
+                            <div>Hello!</div>
+                        </a>
+                     {% endif %}
+                    </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="main">
+            <div class="filmcontent">
+                <div class="filmcap col-md-12 col-lg-12 col-xs-12">
+                    <h1>Animation films</h1>
+                    <img src="..\\static\\Layer 6.png" class="firstfilm">
+                    <div class="contenttext">
+                        Lorem Ipsum is simply dummy text of the printing & typesetting industry.
+                        Lorem Ipsum is simply dummy text of the printing & typesetting industry.
+                        Lorem Ipsum is simply dummy text of the printing & typesetting industry.
+                        Lorem Ipsum is simply dummy text of the printing & typesetting industry.
+                        Lorem Ipsum is simply dummy text of the printing & typesetting industry.<br>
+                        Lorem Ipsum is simply dummy text of the printing & typesetting industry.
+                        Lorem Ipsum is simply dummy text of the printing & typesetting industry.<br>
+                        <b>Lorem Ipsum is simply dummy text of the printing & typesetting industry</b>
+                    </div>
+                    <div class="hrmn"></div>
+                    <div class="bottom">
+                        <div class="rating">
+                            <img src="..\\static\\Layer 9 copy.png">
+                            <img src="..\\static\\Layer 9 copy.png">
+                            <img src="..\\static\\Layer 5 copy 4.png">
+                            <img src="..\\static\\Layer 5 copy 4.png">
+                        </div>
+                        <div class="facebook">
+                            <img src="..\\static\\Ellipse 1.png">
+                        </div>
+                    </div>
+                    <div class="voice_acting">
+                        <h2>Voice Acting</h2>
+                        <ul>
+                            <li>Amanda Leigh Moore</li>
+                            <li>Zachary Levi Pugh</li>
+                            <li>Donna Murphy</li>
+                            <li>Ron Perlman</li>
+                            <li>Ron Perlman</li>
+                        </ul>
+                    </div>
+                    <input id="toggle-heart" type="checkbox"/>
+<label for="toggle-heart" aria-label="like">❤</label>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container_header col-xs-6 col-md-6 col-lg-6">
+                <div class="footer_header">
+                    <img src="..\\static\\Logo_1.png" class="footer_logo">
+                </div>
+                <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/org/moskovskiy_kreml/1023322799/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Московский Кремль</a><a href="https://yandex.ru/maps/213/moscow/category/museum/184105894/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Музей в Москве</a><a href="https://yandex.ru/maps/213/moscow/category/landmark_attraction/89683368508/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Достопримечательность в Москве</a><iframe src="https://yandex.ru/map-widget/v1/-/CCUuIYH9dA" width=70% height="200" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+            </div>  
+        </footer>
+        </body>
+        </html>

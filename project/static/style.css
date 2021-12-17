@@ -1,0 +1,567 @@
+
+* { margin: 0; padding: 0; } .content { min-height: calc(100vh - 80px); }
+body {
+  margin: 0;
+  height: 100%;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #566e86;
+    text-align: left;
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.container_header{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  box-sizing: border-box;
+  max-width: 956px;
+  margin: 16px auto;
+  border-bottom: black;
+}
+.container{
+    margin-top:12px;
+    margin-bottom: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-right: 8px;
+    padding-left: 12px;
+}
+.header_nav{
+  display: flex;
+  flex-flow: wrap row;
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+}
+/* скрываем чекбокс */
+#menu__toggle {
+    opacity: 0;
+  }
+  /* стилизуем кнопку */
+  .menu__btn {
+    display: flex; /* используем flex для центрирования содержимого */
+    align-items: center;  /* центрируем содержимое кнопки */
+    position: relative;
+    
+    
+    margin-bottom: 20px;
+    margin-left: 12px;
+    margin-right: auto;
+    width: 24px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  /* добавляем "гамбургер" */
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #616161;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+    display: flex;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+  .menu__box {
+    display: block;
+    position: fixed;
+    visibility: visible;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: auto;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: #ECEFF1;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  }
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .menu__item:hover {
+    background-color: #CFD8DC;
+  }
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+  }
+  .pinball{
+      margin-left:auto;
+      padding-left: 8px;
+      font-size: 20px;
+  }
+  .grid{
+    padding-left: 8px;
+    font-size: 15px;
+  }
+  .form_block{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: auto;
+    border: none;
+  }
+  .finder{
+    z-index: -1;
+    align-items: center;
+  }
+
+  .search {
+    display: inline-flex;
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 10px;
+    font-size: 15px;
+    z-index: -1;
+    width: 100%;
+  }
+  
+  .search-icon {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    order: -1;
+    margin-top: 7px;
+    z-index: -1;
+    margin-bottom: 10px;
+  }
+  
+  .search-field {
+    width: 100%;
+    border: 0; 
+    z-index: -1;
+  }
+  
+  .search-field:focus {
+    outline: none;
+    z-index: -1;
+  }
+  
+  .search-field:focus + .search-icon {
+    /* стили для иконки при фокусе поля */ 
+    z-index: -1;
+  }
+
+
+.hamburger_menu{
+  margin-right: auto;
+}
+.logo{
+  margin-right: 0px;
+}
+#avatar{
+  width: 30px;
+  height: 30px;
+}
+.site{
+  float: left;
+}
+.profile{
+  float: right;
+}
+.greetings{
+  font-family: sans-serif;
+}
+@media screen and (max-width: 768px){ 
+  .greetings, .avi{
+    display:none;
+  }
+}
+
+.s{
+  display: inline-block;
+}
+section{
+  display: block;
+}
+
+.filmname{
+  color:gray;
+  font-size: 20px;
+}
+.geotag{
+  display: inline-block;
+  color: gray;
+  padding-right: 5px;
+}
+.filmtxt{
+  margin-top: 10px;
+  color: gray;
+}
+.imgblock img{
+  transition: 0.5s;
+  display: block;
+}
+.imgblock{
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+}
+.filmline{
+  
+  margin-right: 8px;
+  height: 0;
+  border: none;
+  border-top: 2px solid #979797;
+  margin-bottom: 3px;
+}
+.bottom{
+  justify-content: space-between;
+  display: flex;
+}
+.main{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  box-sizing: border-box;
+  max-width: 956px;
+  margin: 16px auto;
+  border-bottom: black;
+  flex-grow: 1;
+  
+}
+.main_content{
+  margin-bottom: 64px;
+}
+.hrmn{
+  margin-bottom: 0;
+    height: 1px;
+    width: 100%;
+    background: #3b3b3b;
+}
+.row{
+  display: block;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: -8px;
+  margin-left: -8px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.film{
+  margin-top: 10px;
+  position: relative;
+  
+}
+@media screen and (max-width: 980px) {
+  .row{
+    margin-bottom: 20px;
+    padding-left: 25%;
+    padding-right: 25%;
+    
+  }
+  .film{
+    padding-bottom: 20px;
+    
+    margin: 0 auto;
+  }
+  .imgblock{
+    padding-left: 25%;
+  }
+  .filmname, .filmtxt, .filmlocation{
+    padding-left: 25%;
+    padding-right: 25%;
+  } 
+  .greetings, .avi{
+    display:none;
+  }
+}
+
+
+button{
+  margin: auto;
+}
+footer{
+  background-color:sandybrown;
+  
+}
+
+
+/* Кнопка, используемая для открытия контактной формы - фиксируется в нижней части страницы */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* Всплывающая форма-скрыта по умолчанию */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Добавить стили для контейнера формы */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Поля ввода полной ширины */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Когда входы получают фокус, сделайте что-нибудь */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Установите стиль для кнопки отправить/войти */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Добавить красный цвет фона для кнопки "Отмена" */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Добавить некоторые эффекты наведения на кнопки */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+h1{
+  font-weight: 600;
+  color: black;
+  margin-top: 50px;
+  margin-top: 15px;
+}
+p{
+  font-size: 18px;
+}
+.firstfilm{
+  height: 100%;
+  width: 100%;
+  display: block;
+  margin: 0 auto ;
+  
+}
+.filmcontent{
+  margin: 0 auto;
+  display: block;
+  width: 50%;
+  height: 50%;
+  margin-top: 15%;
+  margin-bottom: 25%;
+}
+.contenttext{
+  margin-top: 25%;
+  margin-bottom: 15%;
+  font-family: sans-serif;
+  color: black;
+  font-size: 24px;
+}
+h2{
+  margin-top: 40px;
+}
+
+.voice_acting{
+  color: black;
+  font-size: 24px;
+}
+form {
+  text-align: center;
+  margin: 15px;
+}
+.reg_button{
+  margin: 0 auto;
+  margin-left: 50%;
+}
+[id='toggle-heart'] {
+  position: absolute;
+  left: -100vw;
+}
+[id='toggle-heart']:checked + label {
+  color: #e2264d;
+  -webkit-filter: none;
+          filter: none;
+  will-change: font-size;
+  -webkit-animation: heart 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
+          animation: heart 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
+}
+[id='toggle-heart']:checked + label:before, [id='toggle-heart']:checked + label:after {
+  -webkit-animation: inherit;
+          animation: inherit;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+[id='toggle-heart']:checked + label:before {
+  will-change: transform, border-width, border-color;
+  -webkit-animation-name: bubble;
+          animation-name: bubble;
+}
+[id='toggle-heart']:checked + label:after {
+  will-change: opacity, box-shadow;
+  -webkit-animation-name: sparkles;
+          animation-name: sparkles;
+}
+[id='toggle-heart']:focus + label {
+  text-shadow: 0 0 3px white,  0 1px 1px white, 0 -1px 1px white,  1px 0 1px white, -1px 0 1px white;
+}
+
+[for='toggle-heart'] {
+  align-self: center;
+  position: relative;
+  color: #888;
+  font-size: 2em;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+[for='toggle-heart']:before, [for='toggle-heart']:after {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  content: '';
+}
+[for='toggle-heart']:before {
+  box-sizing: border-box;
+  margin: -2.25rem;
+  border: solid 2.25rem #e2264d;
+  width: 4.5rem;
+  height: 4.5rem;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+[for='toggle-heart']:after {
+  margin: -0.1875rem;
+  width: 0.375rem;
+  height: 0.375rem;
+  box-shadow: 0.32476rem -3rem 0 -0.1875rem #ff8080, -0.32476rem -2.625rem 0 -0.1875rem #ffed80, 2.54798rem -1.61656rem 0 -0.1875rem #ffed80, 1.84982rem -1.89057rem 0 -0.1875rem #a4ff80, 2.85252rem 0.98418rem 0 -0.1875rem #a4ff80, 2.63145rem 0.2675rem 0 -0.1875rem #80ffc8, 1.00905rem 2.84381rem 0 -0.1875rem #80ffc8, 1.43154rem 2.22414rem 0 -0.1875rem #80c8ff, -1.59425rem 2.562rem 0 -0.1875rem #80c8ff, -0.84635rem 2.50595rem 0 -0.1875rem #a480ff, -2.99705rem 0.35095rem 0 -0.1875rem #a480ff, -2.48692rem 0.90073rem 0 -0.1875rem #ff80ed, -2.14301rem -2.12438rem 0 -0.1875rem #ff80ed, -2.25479rem -1.38275rem 0 -0.1875rem #ff8080;
+}
+
+@-webkit-keyframes heart {
+  0%, 17.5% {
+    font-size: 0;
+  }
+}
+
+@keyframes heart {
+  0%, 17.5% {
+    font-size: 0;
+  }
+}
+@-webkit-keyframes bubble {
+  15% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    border-color: #cc8ef5;
+    border-width: 2.25rem;
+  }
+  30%, 100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    border-color: #cc8ef5;
+    border-width: 0;
+  }
+}
+@keyframes bubble {
+  15% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    border-color: #cc8ef5;
+    border-width: 2.25rem;
+  }
+  30%, 100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    border-color: #cc8ef5;
+    border-width: 0;
+  }
+}
+@-webkit-keyframes sparkles {
+  0%, 20% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+    box-shadow: 0.32476rem -2.4375rem 0 0rem #ff8080, -0.32476rem -2.0625rem 0 0rem #ffed80, 2.1082rem -1.26585rem 0 0rem #ffed80, 1.41004rem -1.53985rem 0 0rem #a4ff80, 2.30412rem 0.85901rem 0 0rem #a4ff80, 2.08305rem 0.14233rem 0 0rem #80ffc8, 0.76499rem 2.33702rem 0 0rem #80ffc8, 1.18748rem 1.71734rem 0 0rem #80c8ff, -1.35019rem 2.0552rem 0 0rem #80c8ff, -0.60229rem 1.99916rem 0 0rem #a480ff, -2.44865rem 0.22578rem 0 0rem #a480ff, -1.93852rem 0.77557rem 0 0rem #ff80ed, -1.70323rem -1.77366rem 0 0rem #ff80ed, -1.81501rem -1.03204rem 0 0rem #ff8080;
+  }
+}
+@keyframes sparkles {
+  0%, 20% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+    box-shadow: 0.32476rem -2.4375rem 0 0rem #ff8080, -0.32476rem -2.0625rem 0 0rem #ffed80, 2.1082rem -1.26585rem 0 0rem #ffed80, 1.41004rem -1.53985rem 0 0rem #a4ff80, 2.30412rem 0.85901rem 0 0rem #a4ff80, 2.08305rem 0.14233rem 0 0rem #80ffc8, 0.76499rem 2.33702rem 0 0rem #80ffc8, 1.18748rem 1.71734rem 0 0rem #80c8ff, -1.35019rem 2.0552rem 0 0rem #80c8ff, -0.60229rem 1.99916rem 0 0rem #a480ff, -2.44865rem 0.22578rem 0 0rem #a480ff, -1.93852rem 0.77557rem 0 0rem #ff80ed, -1.70323rem -1.77366rem 0 0rem #ff80ed, -1.81501rem -1.03204rem 0 0rem #ff8080;
+  }
+}
+
+h3{
+  color:#cc8ef5 ;
+}
+.your{
+  font-size: 4vw;
+}
+.title{
+text-align:center;
+}
