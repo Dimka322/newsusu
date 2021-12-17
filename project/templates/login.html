@@ -40,16 +40,7 @@
                             {% endif %}
                         </ul>
                     </div>
-                    {% block content %}
-                     <form action="" method="POST">
-                         {{ form.hidden_tag() }}
-                         <p>
 
-                             {{ form.name(size=16) }}
-                             {{ form.submit() }}
-                         </p>
-                     </form>
-                     {% endblock %}
                     <div class="s"></div>
                     {% if current_user.is_authenticated %}
                         <div class="avi">

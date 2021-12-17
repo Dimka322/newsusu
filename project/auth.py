@@ -13,8 +13,8 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/login')
 def login():
-    form = SearchForm()
-    return render_template('login.html', form=form)
+
+    return render_template('login.html')
 
 
 @auth.route('/login', methods=['POST'])
